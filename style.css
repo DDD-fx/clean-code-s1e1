@@ -114,13 +114,10 @@ button{
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-li > * {
   vertical-align: middle;
 }
 
-li > input[type="checkbox"] {
+.todo-checkbox {
   margin: 0 10px;
 }
 
