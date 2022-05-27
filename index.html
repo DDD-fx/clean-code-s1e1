@@ -21,11 +21,11 @@
 
       <section class="content">
         <h2 class="content-title">
-          <label for="new-task">Add Item</label>
+          <label class="new-task-label" for="new-task">Add Item</label>
         </h2>
         <div class="new-task-container">
-          <input class="task" id="new-task" type="text">
-          <button>Add</button>
+          <input class="task task-text" id="new-task" type="text">
+          <button class="content-btn">Add</button>
         </div>
         <h2 class="content-title">Todo</h2>
         <ul class="todo-list" id="incompleted-tasks">
@@ -33,30 +33,30 @@
             <input class="todo-checkbox" type="checkbox">
             <label class="task">Pay Bills</label>
             <input class="task" type="text">
-            <button class="edit">Edit</button>
-            <button class="delete">
-              <img src="./remove.svg" alt="delete task">
+            <button class="content-btn edit">Edit</button>
+            <button class="content-btn delete">
+              <img class="delete-img" src="./remove.svg" alt="delete task">
             </button>
           </li>
           <li class="todo-item edit-mode">
             <input class="todo-checkbox" type="checkbox">
             <label class="task">Go Shopping</label>
-            <input class="task" type="text" value="Go Shopping">
-            <button class="edit">Save</button>
-            <button class="delete">
-              <img src="./remove.svg" alt="delete task">
+            <input class="task task-text" type="text" value="Go Shopping">
+            <button class="content-btn edit">Save</button>
+            <button class="content-btn delete">
+              <img class="delete-img" src="./remove.svg" alt="delete task">
             </button>
           </li>
         </ul>
         <h2 class="content-title">Completed</h2>
         <ul class="finished-tasks" id="completed-tasks">
-          <li>
+          <li class="finished-item">
             <input class="todo-checkbox" type="checkbox" checked>
-            <label class="task">See the Doctor</label>
-            <input class="task" type="text">
-            <button class="edit">Edit</button>
-            <button class="delete">
-              <img src="./remove.svg" alt="delete task">
+            <label class="task finished-task-label">See the Doctor</label>
+            <input class="task task-text" type="text">
+            <button class="content-btn edit">Edit</button>
+            <button class="content-btn delete">
+              <img class="delete-img" src="./remove.svg" alt="delete task">
             </button>
           </li>
         </ul>

@@ -41,11 +41,12 @@ let createNewTaskElement=function(taskString){
     editInput.className="task";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.className="content-btn edit";
 
-    deleteButton.className="delete";
+    deleteButton.className="content-btn delete";
     deleteButtonImg.src='./remove.svg';
     deleteButtonImg.alt='delete task';
+    deleteButtonImg.className = "delete-img";
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -55,6 +56,7 @@ let createNewTaskElement=function(taskString){
     listItem.appendChild(editInput);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
+    listItem.className = 'todo-item';
     return listItem;
 }
 
