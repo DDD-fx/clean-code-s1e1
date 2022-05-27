@@ -13,6 +13,7 @@
 }
 
 .matrix-info-img {
+  display: inherit;
   width: 100%;
 }
 
@@ -166,7 +167,7 @@ ul li.edit-mode label {
 
 @media (max-width: 768px) {
 
-  .matrix-info-link {
+  .matrix-info {
     text-align: center;
   }
 
