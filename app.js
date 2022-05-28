@@ -33,13 +33,15 @@ let createNewTaskElement=function(taskString){
     let deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    label.className='task task-label';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
+    checkBox.className="todo-checkbox"
+    
+    editInput.className="task task-text";
     editInput.type="text";
-    editInput.className="task";
-
+    
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="content-btn edit";
 
@@ -124,6 +126,10 @@ let taskCompleted=function(){
 
     //Append the task list item to the #completed-tasks
     let listItem=this.parentNode;
+
+    listItem.classList.add("finished-item");
+    listItem.classList.remove("todo-item");
+    
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 
@@ -136,6 +142,10 @@ let taskIncomplete=function(){
     //When the checkbox is unchecked
     //Append the task list item to the #incompleteTasks.
     let listItem=this.parentNode;
+    
+    listItem.classList.remove("finished-item");
+    listItem.classList.add("todo-item");
+    
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }
