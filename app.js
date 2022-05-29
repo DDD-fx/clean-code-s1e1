@@ -33,22 +33,22 @@ let createNewTaskElement=function(taskString){
     let deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task task-label';
+    label.className='content__task task-label';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
     checkBox.className="todo-checkbox"
     
-    editInput.className="task task-text";
+    editInput.className="content__task task-text";
     editInput.type="text";
     
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="content-btn edit";
+    editButton.className="content__btn edit-btn";
 
-    deleteButton.className="content-btn delete";
+    deleteButton.className="content__btn delete-btn";
     deleteButtonImg.src='./remove.svg';
     deleteButtonImg.alt='delete task';
-    deleteButtonImg.className = "delete-img";
+    deleteButtonImg.className = "content__delete-img";
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -58,7 +58,7 @@ let createNewTaskElement=function(taskString){
     listItem.appendChild(editInput);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
-    listItem.className = 'todo-item';
+    listItem.className = 'todo-list__todo-item';
     return listItem;
 }
 
@@ -89,7 +89,7 @@ let editTask=function(){
 
     let editInput=listItem.querySelector('input[type=text]');
     let label=listItem.querySelector("label");
-    let editBtn=listItem.querySelector(".edit");
+    let editBtn=listItem.querySelector(".edit-btn");
     let containsClass=listItem.classList.contains("edit-mode");
     //If class of the parent is .editmode
     if(containsClass){
@@ -127,8 +127,8 @@ let taskCompleted=function(){
     //Append the task list item to the #completed-tasks
     let listItem=this.parentNode;
 
-    listItem.classList.add("finished-item");
-    listItem.classList.remove("todo-item");
+    listItem.classList.add("finished-tasks__finished-item");
+    listItem.classList.remove("todo-list__todo-item");
     
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
@@ -143,8 +143,8 @@ let taskIncomplete=function(){
     //Append the task list item to the #incompleteTasks.
     let listItem=this.parentNode;
     
-    listItem.classList.remove("finished-item");
-    listItem.classList.add("todo-item");
+    listItem.classList.remove("finished-tasks__finished-item");
+    listItem.classList.add("todo-list__todo-item");
     
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
@@ -169,8 +169,8 @@ let bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
     let checkBox=taskListItem.querySelector("input[type=checkbox]");
-    let editButton=taskListItem.querySelector("button.edit");
-    let deleteButton=taskListItem.querySelector("button.delete");
+    let editButton=taskListItem.querySelector("button.edit-btn");
+    let deleteButton=taskListItem.querySelector("button.delete-btn");
 
 
     //Bind editTask to edit button.
